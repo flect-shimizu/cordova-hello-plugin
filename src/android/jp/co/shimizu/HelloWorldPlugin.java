@@ -9,7 +9,7 @@ public class HelloWorldPlugin extends CordovaPlugin {
     public boolean execute(String action, JSONArray data, CallbackContext callbackContext) throws JSONException {
 
         if (action.equals("say")) {
-            String name = data.get(0);
+            String name = data.getString(0);
             String message = "Hello, " + name;
             callbackContext.success(message);
 
