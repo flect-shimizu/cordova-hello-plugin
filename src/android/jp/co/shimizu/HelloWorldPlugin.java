@@ -6,11 +6,11 @@ import org.json.JSONException;
 
 public class HelloWorldPlugin extends CordovaPlugin {
     @Override
-    public boolean execute(String action, JSONArray data, CallbackContext callbackContext) throws JSONException {
+    public boolean execute(String action, String data, CallbackContext callbackContext) throws JSONException {
 
         if (action.equals("say")) {
 
-            String name = data.getString(0);
+            String name = data;
             String message = "Hello, " + name;
             callbackContext.success(message);
 
