@@ -1,0 +1,23 @@
+
+<?xml version='1.0' encoding='utf-8'?>
+<plugin id="jp.co.shimizu.helloworld" version="0.0.1" xmlns="http://apache.org/cordova/ns/plugins/1.0" xmlns:android="http://schemas.android.com/apk/res/android">
+    <name>HelloWorldPlugin</name>
+    <description>HelloWorldPlugin Description</description>
+    <author>Asial Corporation</author>
+    <license>Apache 2.0 License</license>
+    <engines>
+        <engine name="cordova" version=">=3.5.0" />
+    </engines>
+    <js-module src="www/hello_world.js" name="helloworld">
+        <clobbers target="HelloWorld" />
+    </js-module>
+    <platform name="android">
+        <config-file target="res/xml/config.xml" parent="/*">
+            <feature name="HelloWorldPlugin"> 
+                <param name="android-package" value="jp.co.shimizu.HelloWorldPlugin"/>
+            </feature>
+        </config-file>
+        <source-file src="src/android/jp/co/shimizu/HelloWorldPlugin.java" target-dir="src/jp/co/shimizu">
+        </source-file>        
+    </platform>
+</plugin>
